@@ -6,3 +6,4 @@ export async function GET(
 ): Promise<void> {
   res.sendStatus(200);
 }
+export const AUTHENTICATE = false;
