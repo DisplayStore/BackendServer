@@ -13,14 +13,14 @@
     "medusa"
   ],
   "scripts": {
-    "clean": "npxcross-env ./node_modules/.bin/rimraf dist",
-    "build": "npx cross-env npm run clean && npm run build:server && npm run build:admin",
-    "build:server": "npx cross-env npm run clean && tsc -p tsconfig.server.json",
-    "build:admin": "npx cross-env medusa-admin build --deployment",
+    "clean": "./node_modules/.bin/rimraf dist",
+    "build": "npm run clean && npm run build:server && npm run build:admin",
+    "build:server": "npm run clean && tsc -p tsconfig.server.json",
+    "build:admin": "medusa-admin build --deployment",
     "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
-    "seed": "npx cross-env medusa seed -f ./data/seed.json",
-    "start": "cross-env npm run build && medusa start",
+    "seed": "medusa seed -f ./data/seed.json",
+    "start": "npm run build && medusa start",
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
     "dev": "cross-env npm run build:server && medusa develop"
   },
