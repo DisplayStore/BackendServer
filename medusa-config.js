@@ -34,7 +34,15 @@ const DATABASE_URL =
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
-const plugins = [
+const plugins = [{
+    resolve: `medusa-file-cloudinary`,
+    options: {
+        cloud_name: process.env.YOUR_CLOUD_NAME,
+        api_key: process.env.YOUR_API_KEY,
+        api_secret: process.env.YOUR_API_SECRET,
+        secure: true,
+    },
+},
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
