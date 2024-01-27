@@ -41,6 +41,7 @@ const plugins = [
         api_key: process.env.YOUR_API_KEY,
         api_secret: process.env.YOUR_API_SECRET,
         secure: true,
+root_folder: "products"
     },
 },
   `medusa-fulfillment-manual`,
